@@ -43,11 +43,11 @@ class RESMAN:
 
         if self.load_lhapdf:
             #--load all replicas
-            #lhapdf.setVerbosity(0)
+            # lhapdf.setVerbosity(0)
             os.environ['LHAPDF_DATA_PATH'] = 'lhapdf'
             conf['LHAPDF:PDF']   = lhapdf.mkPDFs(self.lhapdf_pdf )
             conf['LHAPDF:PPDF']  = lhapdf.mkPDFs(self.lhapdf_ppdf)
-            #lhapdf.setVerbosity(1)
+            # lhapdf.setVerbosity(1)
 
         for func in conf['params']:
             if func=='tpdf':
