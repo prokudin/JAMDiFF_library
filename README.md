@@ -7,3 +7,4 @@ https://inspirehep.net/literature/2670797
 
 If any of the results are used in a publication, please, cite
 \cite{Cocuzza:2023oam} and \cite{Cocuzza:2023vqs}
+<img width="359" alt="JAMgraphic_4" src="https://github.com/prokudin/JAMDiFF_library/assets/11931101/6aabe777-d903-4ab5-9588-e5e9f18d7c70">
