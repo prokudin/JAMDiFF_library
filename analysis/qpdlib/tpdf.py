@@ -110,20 +110,21 @@ def gen_xf(wdir,Q2):
     print()
 
     #--also save SB
-    tpdf.setup_SB(Q2=Q2[0])
+    #tpdf.setup_SB(Q2=Q2[0])
     SB      = {}
-    SB['X']  = tpdf.X
-    SB['u']  = tpdf.X*(tpdf.SB['mean']['u']  + tpdf.SB['std']['u'])
-    SB['d']  = tpdf.X*(tpdf.SB['mean']['d']  + tpdf.SB['std']['d'])
-    SB['ub'] = tpdf.X*(tpdf.SB['mean']['ub'] + tpdf.SB['std']['ub'])
-    SB['db'] = tpdf.X*(tpdf.SB['mean']['db'] + tpdf.SB['std']['db'])
-    SB['uv'] = tpdf.X*(tpdf.SB['mean']['uv'] + tpdf.SB['std']['uv'])
-    SB['dv'] = tpdf.X*(tpdf.SB['mean']['dv'] + tpdf.SB['std']['dv'])
+    #SB['X']  = tpdf.X
+    #SB['u']  = tpdf.X*(tpdf.SB['mean']['u']  + tpdf.SB['std']['u'])
+    #SB['d']  = tpdf.X*(tpdf.SB['mean']['d']  + tpdf.SB['std']['d'])
+    #SB['ub'] = tpdf.X*(tpdf.SB['mean']['ub'] + tpdf.SB['std']['ub'])
+    #SB['db'] = tpdf.X*(tpdf.SB['mean']['db'] + tpdf.SB['std']['db'])
+    #SB['uv'] = tpdf.X*(tpdf.SB['mean']['uv'] + tpdf.SB['std']['uv'])
+    #SB['dv'] = tpdf.X*(tpdf.SB['mean']['dv'] + tpdf.SB['std']['dv'])
  
     checkdir('%s/data'%wdir)
     filename='%s/data/tpdf-Q2=%3.5f.dat'%(wdir,Q2[0])
 
     save({'X':X,'Q2':Q2,'XF':XF,'SB':SB},filename)
+    
     print ('Saving data to %s'%filename)
 
 def plot_xf(wdir,Q2,mode=0):
@@ -261,83 +262,83 @@ def plot_xf(wdir,Q2,mode=0):
 
 
     #--plot Soffer Bound
-    X = data['SB']['X']
-    uv  = data['SB']['uv']
-    dv  = data['SB']['dv']
-    ub  = data['SB']['ub']
-    db  = data['SB']['db']
-    hand['SB'] ,= axs [1].plot(X, uv ,color='blue',ls=':',alpha=1.0,zorder=7)
-    hand['SB'] ,= axs [1].plot(X,-uv ,color='blue',ls=':',alpha=1.0,zorder=7)
-    hand['SB'] ,= axs [2].plot(X, dv ,color='blue',ls=':',alpha=1.0,zorder=7)
-    hand['SB'] ,= axs [2].plot(X,-dv ,color='blue',ls=':',alpha=1.0,zorder=7)
-    hand['SB'] ,= axLs[1].plot(X, uv ,color='blue',ls=':',alpha=1.0,zorder=7)
-    hand['SB'] ,= axLs[1].plot(X,-uv ,color='blue',ls=':',alpha=1.0,zorder=7)
-    hand['SB'] ,= axLs[2].plot(X, dv ,color='blue',ls=':',alpha=1.0,zorder=7)
-    hand['SB'] ,= axLs[2].plot(X,-dv ,color='blue',ls=':',alpha=1.0,zorder=7)
-    hand['SB'] ,= axs [3].plot(X, ub ,color='blue',ls=':',alpha=1.0,zorder=7)
-    hand['SB'] ,= axs [3].plot(X,-ub ,color='blue',ls=':',alpha=1.0,zorder=7)
-    hand['SB'] ,= axLs[3].plot(X, ub ,color='blue',ls=':',alpha=1.0,zorder=7)
-    hand['SB'] ,= axLs[3].plot(X,-ub ,color='blue',ls=':',alpha=1.0,zorder=7)
-    hand['SB'] ,= axs [4].plot(X, db ,color='blue',ls=':',alpha=1.0,zorder=7)
-    hand['SB'] ,= axs [4].plot(X,-db ,color='blue',ls=':',alpha=1.0,zorder=7)
-    hand['SB'] ,= axLs[4].plot(X, db ,color='blue',ls=':',alpha=1.0,zorder=7)
-    hand['SB'] ,= axLs[4].plot(X,-db ,color='blue',ls=':',alpha=1.0,zorder=7)
+    #X = data['SB']['X']
+    #uv  = data['SB']['uv']
+    #dv  = data['SB']['dv']
+    #ub  = data['SB']['ub']
+    #db  = data['SB']['db']
+    #hand['SB'] ,= axs [1].plot(X, uv ,color='blue',ls=':',alpha=1.0,zorder=7)
+    #hand['SB'] ,= axs [1].plot(X,-uv ,color='blue',ls=':',alpha=1.0,zorder=7)
+    #hand['SB'] ,= axs [2].plot(X, dv ,color='blue',ls=':',alpha=1.0,zorder=7)
+    #hand['SB'] ,= axs [2].plot(X,-dv ,color='blue',ls=':',alpha=1.0,zorder=7)
+    #hand['SB'] ,= axLs[1].plot(X, uv ,color='blue',ls=':',alpha=1.0,zorder=7)
+    #hand['SB'] ,= axLs[1].plot(X,-uv ,color='blue',ls=':',alpha=1.0,zorder=7)
+    #hand['SB'] ,= axLs[2].plot(X, dv ,color='blue',ls=':',alpha=1.0,zorder=7)
+    #hand['SB'] ,= axLs[2].plot(X,-dv ,color='blue',ls=':',alpha=1.0,zorder=7)
+    #hand['SB'] ,= axs [3].plot(X, ub ,color='blue',ls=':',alpha=1.0,zorder=7)
+    #hand['SB'] ,= axs [3].plot(X,-ub ,color='blue',ls=':',alpha=1.0,zorder=7)
+    #hand['SB'] ,= axLs[3].plot(X, ub ,color='blue',ls=':',alpha=1.0,zorder=7)
+    #hand['SB'] ,= axLs[3].plot(X,-ub ,color='blue',ls=':',alpha=1.0,zorder=7)
+    #hand['SB'] ,= axs [4].plot(X, db ,color='blue',ls=':',alpha=1.0,zorder=7)
+    #hand['SB'] ,= axs [4].plot(X,-db ,color='blue',ls=':',alpha=1.0,zorder=7)
+    #hand['SB'] ,= axLs[4].plot(X, db ,color='blue',ls=':',alpha=1.0,zorder=7)
+    #hand['SB'] ,= axLs[4].plot(X,-db ,color='blue',ls=':',alpha=1.0,zorder=7)
 
     #--plot JAM3D
-    os.environ['LHAPDF_DATA_PATH'] = 'lhapdf'
-    JAM3D = lhapdf.mkPDFs('JAM23-transversity_proton_lo')
+    #os.environ['LHAPDF_DATA_PATH'] = 'lhapdf'
+    #JAM3D = lhapdf.mkPDFs('JAM23-transversity_proton_lo')
     #JAM3D = lhapdf.mkPDFs('JAM22-transversity_proton_lo')
-    X = np.linspace(0.001,0.99,100)
-    nrep = len(JAM3D)
+    #X = np.linspace(0.001,0.99,100)
+    #nrep = len(JAM3D)
 
-    flavs = ['uv','dv']
-    plot = {flav: [] for flav in flavs} 
+    #flavs = ['uv','dv']
+    #plot = {flav: [] for flav in flavs} 
 
-    for i in range(nrep):
-        #--skip mean value
-        if i==0: continue
-        dv =  np.array([JAM3D[i].xfxQ2( 1,x,Q2)-JAM3D[i].xfxQ2(-1,x,Q2) for x in X])
-        uv =  np.array([JAM3D[i].xfxQ2( 2,x,Q2)-JAM3D[i].xfxQ2(-2,x,Q2) for x in X])
-        plot['dv'].append(dv)
-        plot['uv'].append(uv)
+    #for i in range(nrep):
+    #    #--skip mean value
+    #    if i==0: continue
+    #    dv =  np.array([JAM3D[i].xfxQ2( 1,x,Q2)-JAM3D[i].xfxQ2(-1,x,Q2) for x in X])
+    #    uv =  np.array([JAM3D[i].xfxQ2( 2,x,Q2)-JAM3D[i].xfxQ2(-2,x,Q2) for x in X])
+    #    plot['dv'].append(dv)
+    #    plot['uv'].append(uv)
 
-    mean_uv = np.mean(plot['uv'],axis=0)
-    mean_dv = np.mean(plot['dv'],axis=0)
-    std_uv  = np.std (plot['uv'],axis=0)
-    std_dv  = np.std (plot['dv'],axis=0)
+    #mean_uv = np.mean(plot['uv'],axis=0)
+    #mean_dv = np.mean(plot['dv'],axis=0)
+    #std_uv  = np.std (plot['uv'],axis=0)
+    #std_dv  = np.std (plot['dv'],axis=0)
     
-    hand['JAM3D']  = axs [1].fill_between(X,(mean_uv-std_uv),(mean_uv+std_uv),color='blue',alpha=0.5,zorder=5)
-    hand['JAM3D']  = axLs[1].fill_between(X,(mean_uv-std_uv),(mean_uv+std_uv),color='blue',alpha=0.5,zorder=5)
-    hand['JAM3D']  = axs [2].fill_between(X,(mean_dv-std_dv),(mean_dv+std_dv),color='blue',alpha=0.5,zorder=5)
-    hand['JAM3D']  = axLs[2].fill_between(X,(mean_dv-std_dv),(mean_dv+std_dv),color='blue',alpha=0.5,zorder=5)
+    #hand['JAM3D']  = axs [1].fill_between(X,(mean_uv-std_uv),(mean_uv+std_uv),color='blue',alpha=0.5,zorder=5)
+    #hand['JAM3D']  = axLs[1].fill_between(X,(mean_uv-std_uv),(mean_uv+std_uv),color='blue',alpha=0.5,zorder=5)
+    #hand['JAM3D']  = axs [2].fill_between(X,(mean_dv-std_dv),(mean_dv+std_dv),color='blue',alpha=0.5,zorder=5)
+    #hand['JAM3D']  = axLs[2].fill_between(X,(mean_dv-std_dv),(mean_dv+std_dv),color='blue',alpha=0.5,zorder=5)
 
     #--plot JAM3D (no LQCD)
-    os.environ['LHAPDF_DATA_PATH'] = 'lhapdf'
-    JAM3D = lhapdf.mkPDFs('JAM23-transversity_proton_lo_nolat')
+    #os.environ['LHAPDF_DATA_PATH'] = 'lhapdf'
+    #JAM3D = lhapdf.mkPDFs('JAM23-transversity_proton_lo_nolat')
     #JAM3D = lhapdf.mkPDFs('JAM22check-transversity_proton_lo')
-    X = np.linspace(0.001,0.99,100)
-    nrep = len(JAM3D)
+    #X = np.linspace(0.001,0.99,100)
+    #nrep = len(JAM3D)
 
-    flavs = ['uv','dv']
-    plot = {flav: [] for flav in flavs} 
+    #flavs = ['uv','dv']
+    #plot = {flav: [] for flav in flavs} 
 
-    for i in range(nrep):
-        #--skip mean value
-        if i==0: continue
-        dv =  np.array([JAM3D[i].xfxQ2( 1,x,Q2)-JAM3D[i].xfxQ2(-1,x,Q2) for x in X])
-        uv =  np.array([JAM3D[i].xfxQ2( 2,x,Q2)-JAM3D[i].xfxQ2(-2,x,Q2) for x in X])
-        plot['dv'].append(dv)
-        plot['uv'].append(uv)
+    #for i in range(nrep):
+    #    #--skip mean value
+    #    if i==0: continue
+    #    dv =  np.array([JAM3D[i].xfxQ2( 1,x,Q2)-JAM3D[i].xfxQ2(-1,x,Q2) for x in X])
+    #    uv =  np.array([JAM3D[i].xfxQ2( 2,x,Q2)-JAM3D[i].xfxQ2(-2,x,Q2) for x in X])
+    #    plot['dv'].append(dv)
+    #    plot['uv'].append(uv)
 
-    mean_uv = np.mean(plot['uv'],axis=0)
-    mean_dv = np.mean(plot['dv'],axis=0)
-    std_uv  = np.std (plot['uv'],axis=0)
-    std_dv  = np.std (plot['dv'],axis=0)
+    #mean_uv = np.mean(plot['uv'],axis=0)
+    #mean_dv = np.mean(plot['dv'],axis=0)
+    #std_uv  = np.std (plot['uv'],axis=0)
+    #std_dv  = np.std (plot['dv'],axis=0)
     
-    hand['JAM3D_noLQCD']  = axs [1].fill_between(X,(mean_uv-std_uv),(mean_uv+std_uv),color='green',alpha=0.5,zorder=5)
-    hand['JAM3D_noLQCD']  = axLs[1].fill_between(X,(mean_uv-std_uv),(mean_uv+std_uv),color='green',alpha=0.5,zorder=5)
-    hand['JAM3D_noLQCD']  = axs [2].fill_between(X,(mean_dv-std_dv),(mean_dv+std_dv),color='green',alpha=0.5,zorder=5)
-    hand['JAM3D_noLQCD']  = axLs[2].fill_between(X,(mean_dv-std_dv),(mean_dv+std_dv),color='green',alpha=0.5,zorder=5)
+    #hand['JAM3D_noLQCD']  = axs [1].fill_between(X,(mean_uv-std_uv),(mean_uv+std_uv),color='green',alpha=0.5,zorder=5)
+    #hand['JAM3D_noLQCD']  = axLs[1].fill_between(X,(mean_uv-std_uv),(mean_uv+std_uv),color='green',alpha=0.5,zorder=5)
+    #hand['JAM3D_noLQCD']  = axs [2].fill_between(X,(mean_dv-std_dv),(mean_dv+std_dv),color='green',alpha=0.5,zorder=5)
+    #hand['JAM3D_noLQCD']  = axLs[2].fill_between(X,(mean_dv-std_dv),(mean_dv+std_dv),color='green',alpha=0.5,zorder=5)
 
     #--plot Pavia
     #radici = pd.read_excel('./plots/models/xh1Radici.xlsx')
@@ -353,14 +354,14 @@ def plot_xf(wdir,Q2,mode=0):
 
     handles,labels = [],[]
     handles.append(hand['thy'])
-    handles.append(hand['JAM3D'])
-    handles.append(hand['JAM3D_noLQCD'])
-    handles.append(hand['SB'])
+    #handles.append(hand['JAM3D'])
+    #handles.append(hand['JAM3D_noLQCD'])
+    #handles.append(hand['SB'])
 
     labels.append(r'\textrm{\textbf{JAM3DiFF}}')
-    labels.append(r'\textrm{\textbf{JAM3D$^*$ (w/ LQCD)}}')
-    labels.append(r'\textrm{\textbf{JAM3D$^*$ (no LQCD)}}')
-    labels.append(r'\textrm{\textbf{SB}}')
+    #labels.append(r'\textrm{\textbf{JAM3D$^*$ (w/ LQCD)}}')
+    #labels.append(r'\textrm{\textbf{JAM3D$^*$ (no LQCD)}}')
+    #labels.append(r'\textrm{\textbf{SB}}')
 
     axs[3].legend(handles,labels,loc='upper left',fontsize=20,frameon=0,handletextpad=0.3,handlelength=0.9,ncol=1,columnspacing=1.0)
 
