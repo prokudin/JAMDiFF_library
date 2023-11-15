@@ -15,7 +15,7 @@ from qcdlib.dglap import DGLAP
 from qcdlib.kernels import KERNELS
 from qcdlib.mellin import MELLIN
 from tools.config import conf
-import lhapdf
+#import lhapdf
 
 class TPDF():
 
