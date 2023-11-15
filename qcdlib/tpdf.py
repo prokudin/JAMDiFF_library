@@ -49,7 +49,7 @@ class TPDF():
                     if 'LHAPDF:PDF'  in conf: self.PDF   = conf['LHAPDF:PDF'] 
                     if 'LHAPDF:PPDF' in conf: self.PPDF  = conf['LHAPDF:PPDF'] 
 
-                    self.setup_SB()
+                    #self.setup_SB()
 
 
         if mellin==None:
