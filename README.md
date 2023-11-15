@@ -1,4 +1,4 @@
-# JAMDiFF_library
+# JAMDiFF_library <img width="125" alt="JAMgraphic_4" src="https://github.com/prokudin/JAMDiFF_library/assets/11931101/6aabe777-d903-4ab5-9588-e5e9f18d7c70">
 
 This repository contains files needed for plotting functions extracted by JAM Collaboration in the following papers:
 https://inspirehep.net/literature/2691808
@@ -7,4 +7,4 @@ https://inspirehep.net/literature/2670797
 
 If any of the results are used in a publication, please, cite
 \cite{Cocuzza:2023oam} and \cite{Cocuzza:2023vqs}
-<img width="359" alt="JAMgraphic_4" src="https://github.com/prokudin/JAMDiFF_library/assets/11931101/6aabe777-d903-4ab5-9588-e5e9f18d7c70">
+
