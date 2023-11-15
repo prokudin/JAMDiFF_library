@@ -22,12 +22,10 @@ from tools.config    import conf,load_config
 #--from fitlib
 from fitlib.resman import RESMAN
 
+
 #--from local
-from analysis.qpdlib.qpdcalc import QPDCALC
 from analysis.corelib import core
 from analysis.corelib import classifier
-
-import kmeanconf as kc
 
 import warnings
 warnings.filterwarnings("ignore")

@@ -28,8 +28,6 @@ from fitlib.resman import RESMAN
 from analysis.corelib import core
 from analysis.corelib import classifier
 
-import kmeanconf as kc
-
 import warnings
 warnings.filterwarnings("ignore")
 
