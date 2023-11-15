@@ -34,8 +34,8 @@ from sklearn import metrics
 #--from tools
 from tools.tools     import load,save,checkdir,lprint
 from tools.config    import conf,load_config
-from tools.inputmod  import INPUTMOD
-from tools.randomstr import id_generator
+#from tools.inputmod  import INPUTMOD
+#from tools.randomstr import id_generator
 
 #--from local  
 from analysis.corelib import core
