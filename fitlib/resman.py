@@ -12,7 +12,7 @@ from fitlib.parman import PARMAN
 from tools.tools    import checkdir
 from tools.config   import conf,load_config,options
 
-import lhapdf
+#import lhapdf
 
 
 
@@ -35,19 +35,19 @@ class RESMAN:
         conf['eweak']   = eweak.EWEAK()
 
         #--setup LHAPDF
-        if 'lhapdf_pdf'   in conf: self.lhapdf_pdf   = conf['lhapdf_pdf']
-        else:                      self.lhapdf_pdf   = 'JAM22-PDF_proton_nlo_pos'
+        #if 'lhapdf_pdf'   in conf: self.lhapdf_pdf   = conf['lhapdf_pdf']
+        #else:                      self.lhapdf_pdf   = 'JAM22-PDF_proton_nlo_pos'
 
-        if 'lhapdf_ppdf'  in conf: self.lhapdf_ppdf  = conf['lhapdf_ppdf']
-        else:                      self.lhapdf_ppdf  = 'JAM22-PPDF_proton_nlo_pos'
+        #if 'lhapdf_ppdf'  in conf: self.lhapdf_ppdf  = conf['lhapdf_ppdf']
+        #else:                      self.lhapdf_ppdf  = 'JAM22-PPDF_proton_nlo_pos'
 
-        if self.load_lhapdf:
-            #--load all replicas
-            # lhapdf.setVerbosity(0)
-            os.environ['LHAPDF_DATA_PATH'] = 'lhapdf'
-            conf['LHAPDF:PDF']   = lhapdf.mkPDFs(self.lhapdf_pdf )
-            conf['LHAPDF:PPDF']  = lhapdf.mkPDFs(self.lhapdf_ppdf)
-            # lhapdf.setVerbosity(1)
+        #if self.load_lhapdf:
+        #    #--load all replicas
+        #    # lhapdf.setVerbosity(0)
+        #    os.environ['LHAPDF_DATA_PATH'] = 'lhapdf'
+        #    conf['LHAPDF:PDF']   = lhapdf.mkPDFs(self.lhapdf_pdf )
+        #    conf['LHAPDF:PPDF']  = lhapdf.mkPDFs(self.lhapdf_ppdf)
+        #    # lhapdf.setVerbosity(1)
 
         for func in conf['params']:
             if func=='tpdf':
