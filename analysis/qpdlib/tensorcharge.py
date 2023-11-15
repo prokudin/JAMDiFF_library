@@ -24,11 +24,6 @@ import scipy.stats as stats
 from matplotlib.patches import Ellipse
 import matplotlib.transforms as transforms
 
-#--set lhapdf data path
-version = int(sys.version[0])
-os.environ["LHAPDF_DATA_PATH"] = '/work/JAM/ccocuzza/lhapdf/python%s/sets'%version
-
-cwd = 'plots'
 
 def confidence_ellipse(x, y, ax, n_std=3.0, facecolor='none', **kwargs):
     """
@@ -148,21 +143,21 @@ def plot_tensorcharge(wdir,mode=1,Q2=4,trunc=False,xmin=0.006,xmax=0.99):
 
     #--plot JAM3D
     if mode==0: 
-        du=get_data('%s/data/JAM3D/JAM23/LQCD'%cwd,'deltau',4)
-        dd=get_data('%s/data/JAM3D/JAM23/LQCD'%cwd,'deltad',4)
+        du=get_data('data/JAM3D/JAM23/LQCD','deltau',4)
+        dd=get_data('data/JAM3D/JAM23/LQCD','deltad',4)
         bb =ax.scatter(du,dd,color='blue',s=8,alpha=0.5)
         H.append((bb))
         
-        du=get_data('%s/data/JAM3D/JAM23/noLQCD'%cwd,'deltau',4)
-        dd=get_data('%s/data/JAM3D/JAM23/noLQCD'%cwd,'deltad',4)
+        du=get_data('data/JAM3D/JAM23/noLQCD','deltau',4)
+        dd=get_data('data/JAM3D/JAM23/noLQCD','deltad',4)
         bb =ax.scatter(du,dd,color='green',s=8,alpha=0.5)
         H.append((bb))
    
     if mode==1: 
-        h=plot(ax,'%s/data/JAM3D/JAM23/LQCD'%cwd,'b',center=True)
+        h=plot(ax,'data/JAM3D/JAM23/LQCD','b',center=True)
         H.append(h)
         
-        h=plot(ax,'%s/data/JAM3D/JAM23/noLQCD'%cwd,'g',center=True)
+        h=plot(ax,'data/JAM3D/JAM23/noLQCD','g',center=True)
         H.append(h)
 
     L.append(r'${\rm JAM3D}$')
@@ -266,8 +261,8 @@ def plot_tensorcharge(wdir,mode=1,Q2=4,trunc=False,xmin=0.006,xmax=0.99):
     #--JAM22-3D
     #D.append([0.90 ,0.05  ,0.05  ,'JAM3D','bo',0.08])
     #D.append([0.71 ,0.16  ,0.16  ,'JAM3D (no LQCD)','go',0.08])
-    du=get_data('%s/data/JAM3D/JAM23/LQCD'%cwd,'deltau',4)
-    dd=get_data('%s/data/JAM3D/JAM23/LQCD'%cwd,'deltad',4)
+    du=get_data('data/JAM3D/JAM23/LQCD','deltau',4)
+    dd=get_data('data/JAM3D/JAM23/LQCD','deltad',4)
     gT = du - dd
     if mode==0: 
         bb =ax.scatter(gT,np.ones(len(gT)),color='blue',s=8,alpha=0.5)
@@ -275,8 +270,8 @@ def plot_tensorcharge(wdir,mode=1,Q2=4,trunc=False,xmin=0.006,xmax=0.99):
     if mode==1: 
         mean, std = np.mean(gT), np.std(gT)
         D.append([mean ,std   ,std   ,'JAM3D (w/ LQCD)'     ,'bo',0.08])
-    du=get_data('%s/data/JAM3D/JAM23/noLQCD'%cwd,'deltau',4)
-    dd=get_data('%s/data/JAM3D/JAM23/noLQCD'%cwd,'deltad',4)
+    du=get_data('data/JAM3D/JAM23/noLQCD','deltau',4)
+    dd=get_data('data/JAM3D/JAM23/noLQCD','deltad',4)
     gT = du - dd
     if mode==0: 
         bb =ax.scatter(gT,2*np.ones(len(gT)),color='green',s=8,alpha=0.5)
