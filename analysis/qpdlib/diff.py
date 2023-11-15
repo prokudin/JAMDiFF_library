@@ -520,8 +520,6 @@ def plot_H(wdir,Q2=None,mode=1):
         data=load(filename)
         
     replicas=core.get_replicas(wdir)
-    cluster,colors,nc,cluster_order = classifier.get_clusters(wdir,istep,kc) 
-    best_cluster=cluster_order[0]
 
     D     = data['D']
     Zgrid = data['Zgrid']
