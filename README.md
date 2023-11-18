@@ -10,6 +10,10 @@ If any of the results are used in a publication, please, cite
 
 ## Instructions
 
-Run the following notebook, all instructions are ptovided within the notebook:
+Run the following notebook, the notebook will help you produce tables and plots with our functions:
 https://colab.research.google.com/github/prokudin/JAMDiFF_library/blob/main/JAMDiFF_Library.ipynb
+
+## Questions
+
+If you have questions and/or comments, please, send them to Alexei Prokudin <prokudin@jlab.org>
 
