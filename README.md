@@ -8,5 +8,8 @@ https://inspirehep.net/literature/2691808 and https://inspirehep.net/literature/
 If any of the results are used in a publication, please, cite
 \cite{Cocuzza:2023oam} and \cite{Cocuzza:2023vqs}
 
+## Instructions
+
+Run the following notebook, all instructions are ptovided within the notebook:
 https://colab.research.google.com/github/prokudin/JAMDiFF_library/blob/main/JAMDiFF_Library.ipynb
 
