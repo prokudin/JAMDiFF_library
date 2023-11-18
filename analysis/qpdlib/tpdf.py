@@ -43,27 +43,22 @@ FLAV.append('db')
 cmap = matplotlib.cm.get_cmap('plasma')
 
 
-def get_xf(X,Q2,flav,wdir):
+def get_xf(X,Q2,wdir):
     """
     Generates x * transversity
     X: array with values of x
-    Q2: float with the values of Q^2
-    flav: str quark flavor to generate, from ['uv','dv,'u','d','ub','db']
+    Q2: float with the values of Q^2    
     wdir: str analysis to use, from ['results/noLQCD','results/wLQCD']
     
     Returns a dictionary with the following entries:
     * ['X'] - values of $x_{Bj}$
     * ['Q2'] - values of $Q^2$
-    * ['XF']['mean'] -$ x h_1(x,Q^2)$ averaged over all replicas
-    * ['XF']['std'] - $ x h_1(x,Q^2)$  transversity standard deviation over all replicas
-    """
+    * ['XF'][flav]: where flav = str quark flavor from ['uv','dv,'u','d','ub','db']
+    * ['XF'][flav]['mean'] -$ x h_1(x,Q^2)$ averaged over all replicas for flav
+    * ['XF'][flav]['std'] - $ x h_1(x,Q^2)$  transversity standard deviation over all replicas for flav
+    """    
     
-    if flav not in FLAV:
-        print('Please, use quark from ', FLAV)
-        return {}
-    
-    
-    print('\ngenerating transvesrity for %s at Q2 = %s from %s'%(flav,Q2,wdir))
+    print('\ngenerating transvesrity at Q2 = %s from %s'%(Q2,wdir))
     load_config('%s/input.py'%wdir)
     istep=core.get_istep()
     replicas=core.get_replicas(wdir)
@@ -81,48 +76,33 @@ def get_xf(X,Q2,flav,wdir):
 
     tpdf=conf['tpdf']
 
-    tpdf=conf['tpdf']
     #--setup kinematics
     Q2 = Q2 * np.ones(len(X))
 
     tpdf.evolve(Q2)
 
     #--compute XF for all replicas        
-    XFdata=[]
+    XFdata={}
     cnt=0
-    for par in replicas: # testing on 10 replicas only
+    for par in replicas[:10]: # testing on 10 replicas only
         core.mod_conf(istep,core.get_replicas(wdir)[cnt])   
         cnt+=1
         lprint('%d/%d'%(cnt,len(replicas)))
 
         parman.set_new_params(par,initial=True)
 
-        
-        #if flav not in XF:  XF[flav]=[]
+        for flav in FLAV:
+            if flav not in XFdata:  XFdata[flav]=[]
 
-        #if flav=='uv':
-        #     func=lambda x: tpdf.get_xF(x,Q2,'uv')
-        #elif flav=='dv':
-        #     func=lambda x: tpdf.get_xF(x,Q2,'dv')
-        #else:
-        #     func=lambda x: tpdf.get_xF(x,Q2,flav) 
-        func=lambda x: tpdf.get_xF(x,Q2,flav)
-        #XF[flav].append(np.array([func(x) for x in X]))
-        XFdata.append(func(X))
+            func=lambda x: tpdf.get_xF(x,Q2,flav)
+            XFdata[flav].append(func(X))
 
+    # mean over replicas for each flavor  
     XF = {}
-    XF['mean']=np.average(XFdata,axis = 0) # $ x h_1(x,Q^2)$ averaged over all replicas
-    XF['std']=np.std(XFdata,axis = 0) # $ x h_1(x,Q^2)$ std over all replicas
-    #--also save SB
-    #tpdf.setup_SB(Q2=Q2[0])
-    #SB      = {}
-    #SB['X']  = tpdf.X
-    #SB['u']  = tpdf.X*(tpdf.SB['mean']['u']  + tpdf.SB['std']['u'])
-    #SB['d']  = tpdf.X*(tpdf.SB['mean']['d']  + tpdf.SB['std']['d'])
-    #SB['ub'] = tpdf.X*(tpdf.SB['mean']['ub'] + tpdf.SB['std']['ub'])
-    #SB['db'] = tpdf.X*(tpdf.SB['mean']['db'] + tpdf.SB['std']['db'])
-    #SB['uv'] = tpdf.X*(tpdf.SB['mean']['uv'] + tpdf.SB['std']['uv'])
-    #SB['dv'] = tpdf.X*(tpdf.SB['mean']['dv'] + tpdf.SB['std']['dv'])
+    for flav in FLAV:
+        XF[flav]={}
+        XF[flav]['mean']=np.average(XFdata[flav],axis = 0) # $ x h_1(x,Q^2)$ averaged over all replicas
+        XF[flav]['std']=np.std(XFdata[flav],axis = 0) # $ x h_1(x,Q^2)$ std over all replicas
  
     #checkdir('%s/data'%wdir)
     #filename='%s/data/tpdf-Q2=%3.5f.dat'%(wdir,Q2[0])
