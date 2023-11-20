@@ -85,7 +85,7 @@ def get_xf(X,Q2,wdir):
     XFdata={}
     cnt=0
     for par in replicas[:10]: # testing on 10 replicas only
-        core.mod_conf(istep,core.get_replicas(wdir)[cnt])   
+        #core.mod_conf(istep,core.get_replicas(wdir)[cnt])   
         cnt+=1
         lprint('%d/%d'%(cnt,len(replicas)))
 

@@ -76,7 +76,7 @@ def gen_D(wdir,Q2=None):
 
     cnt = 0
     for par in replicas:
-        core.mod_conf(istep,core.get_replicas(wdir)[cnt])
+        #core.mod_conf(istep,core.get_replicas(wdir)[cnt])
         lprint('%d/%d'%(cnt+1,len(replicas)))
 
         parman.set_new_params(par,initial=True)
@@ -393,7 +393,7 @@ def gen_H(wdir,Q2=None):
 
     cnt = 0
     for par in replicas:
-        core.mod_conf(istep,core.get_replicas(wdir)[cnt])
+        #core.mod_conf(istep,core.get_replicas(wdir)[cnt])
         lprint('%d/%d'%(cnt+1,len(replicas)))
 
         parman.set_new_params(par,initial=True)
@@ -736,7 +736,7 @@ def gen_D_Mh_given_z(wdir,Q2=None,force=False):
     cnt = 0
     for par in replicas:
         #if cnt>5: continue
-        core.mod_conf(istep,core.get_replicas(wdir)[cnt])
+        #core.mod_conf(istep,core.get_replicas(wdir)[cnt])
         lprint('%d/%d'%(cnt+1,len(replicas)))
 
         parman.set_new_params(par,initial=True)
@@ -827,7 +827,7 @@ def gen_D_z_given_Mh(wdir,Q2=None,force=False):
     cnt = 0
     for par in replicas:
         #if cnt>5: continue
-        core.mod_conf(istep,core.get_replicas(wdir)[cnt])
+        #core.mod_conf(istep,core.get_replicas(wdir)[cnt])
         lprint('%d/%d'%(cnt+1,len(replicas)))
 
         parman.set_new_params(par,initial=True)
