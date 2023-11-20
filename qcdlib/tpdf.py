@@ -1,8 +1,8 @@
 #!/bin/env python
 import sys,os
-import matplotlib
-matplotlib.use('Agg')
-matplotlib.rc('text',usetex=True)
+#import matplotlib
+#matplotlib.use('Agg')
+#matplotlib.rc('text',usetex=True)
 from tools.tools import checkdir
 import pylab as py
 from scipy.special import gamma

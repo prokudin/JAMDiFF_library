@@ -4,11 +4,11 @@ import copy
 
 #--matplotlib
 import matplotlib
-matplotlib.use('Agg')
-matplotlib.rc('text.latex',preamble=r'\usepackage{amssymb}')
-from matplotlib.ticker import MultipleLocator
-from mpl_toolkits.axes_grid1 import make_axes_locatable
-from matplotlib import cm
+#matplotlib.use('Agg')
+#matplotlib.rc('text.latex',preamble=r'\usepackage{amssymb}')
+#from matplotlib.ticker import MultipleLocator
+#from mpl_toolkits.axes_grid1 import make_axes_locatable
+#from matplotlib import cm
 import pylab as py
 
 #--from scipy stack 

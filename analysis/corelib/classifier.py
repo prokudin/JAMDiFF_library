@@ -7,13 +7,13 @@ import pandas as pd
 import copy
 
 #--matplotlib
-import matplotlib
-matplotlib.use('Agg')
+#import matplotlib
+#matplotlib.use('Agg')
 #matplotlib.rcParams['text.latex.preamble']=r"\usepackage{amsmath}"
 #matplotlib.rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
-matplotlib.rc('text',usetex=True)
-from matplotlib import cm
-import pylab as py
+#matplotlib.rc('text',usetex=True)
+#from matplotlib import cm
+#import pylab as py
 
 #--for biclustering
 from sklearn.datasets import make_biclusters

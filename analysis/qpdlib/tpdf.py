@@ -3,12 +3,12 @@ import numpy as np
 import copy
 
 #--matplotlib
-import matplotlib
-matplotlib.use('Agg')
-from matplotlib.ticker import MultipleLocator
-from mpl_toolkits.axes_grid1 import make_axes_locatable
-from matplotlib import cm
-import pylab as py
+#import matplotlib
+#matplotlib.use('Agg')
+#from matplotlib.ticker import MultipleLocator
+#from mpl_toolkits.axes_grid1 import make_axes_locatable
+#from matplotlib import cm
+#import pylab as py
 
 import pandas as pd
 
@@ -30,7 +30,7 @@ from analysis.corelib import classifier
 import warnings
 warnings.filterwarnings("ignore")
 
-import lhapdf
+#import lhapdf
 
 FLAV=[]
 FLAV.append('u')
@@ -40,7 +40,6 @@ FLAV.append('dv')
 FLAV.append('ub')
 FLAV.append('db')
 
-cmap = matplotlib.cm.get_cmap('plasma')
 
 
 def get_xf(X,Q2,wdir):
@@ -84,7 +83,7 @@ def get_xf(X,Q2,wdir):
     #--compute XF for all replicas        
     XFdata={}
     cnt=0
-    for par in replicas[:10]: # testing on 10 replicas only
+    for par in replicas: # testing on 10 replicas only
         #core.mod_conf(istep,core.get_replicas(wdir)[cnt])   
         cnt+=1
         lprint('%d/%d'%(cnt,len(replicas)))
@@ -202,7 +201,7 @@ def plot_xf(wdir,Q2,mode=0):
     #--mode 0: plot each replica
     #--mode 1: plot average and standard deviation of replicas 
 
-
+    cmap = matplotlib.cm.get_cmap('plasma')
     load_config('%s/input.py'%wdir)
     istep=core.get_istep()
 

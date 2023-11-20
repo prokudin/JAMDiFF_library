@@ -8,10 +8,10 @@ from analysis.corelib import core
 
 #--matplotlib
 import matplotlib
-matplotlib.use('Agg')
+#matplotlib.use('Agg')
 #matplotlib.rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]
 #matplotlib.rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
-matplotlib.rc('text',usetex=True)
+#matplotlib.rc('text',usetex=True)
 import pylab as py
 from matplotlib.ticker import MultipleLocator
 from matplotlib.ticker import ScalarFormatter, NullFormatter
